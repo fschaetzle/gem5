@@ -448,7 +448,7 @@ transition({RSC,RSD,RUSD,RUSC,RU,I}, WriteUnique, BUSY_BLKD) {
 
 // AtomicReturn and AtomicNoReturn
 
-transition({I,SC,SC_RSC,SD,SD_RSD,SD_RSC,RSD,RUSD,
+transition({I,SC,SC_RSC,SD,SD_RSD,SD_RSC,RSD,RUSD,RUSC,
             UD,UD_RSC,UD_RSD,UD_RU,UC,UC_RSC,UC_RU,RSC,RU}, AtomicReturn, BUSY_BLKD) {
   Initiate_Request;
   Initiate_AtomicReturn_Forward;
@@ -457,7 +457,7 @@ transition({I,SC,SC_RSC,SD,SD_RSD,SD_RSC,RSD,RUSD,
   ProcessNextState;
 }
 
-transition({I,SC,SC_RSC,SD,SD_RSD,SD_RSC,RSD,RUSD,
+transition({I,SC,SC_RSC,SD,SD_RSD,SD_RSC,RSD,RUSD,RUSC,
             UD,UD_RSC,UD_RSD,UD_RU,UC,UC_RSC,UC_RU,RSC,RU}, AtomicNoReturn, BUSY_BLKD) {
   Initiate_Request;
   Initiate_AtomicNoReturn_Forward;

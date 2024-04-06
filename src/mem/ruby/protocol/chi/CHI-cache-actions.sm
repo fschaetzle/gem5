@@ -1161,7 +1161,9 @@ action(Initiate_AtomicReturn_Miss_Alloc, desc="") {
   tbe.actions.pushNB(Event:WriteFEPipe);
   tbe.actions.push(Event:SendDBIDResp_AR);
   tbe.actions.pushNB(Event:WriteFEPipe);
-  tbe.actions.pushNB(Event:SendCompData_AR);
+  tbe.actions.push(Event:SendCompData_AR);
+  tbe.actions.push(Event:WriteFEPipe);
+  tbe.actions.push(Event:CheckCacheFill);
   tbe.actions.push(Event:DelayAtomic);
   tbe.actions.push(Event:WriteBEPipe);
   tbe.actions.push(Event:TagArrayWrite);
